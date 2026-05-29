@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pollice Verde – Giardinaggio Professionale | Fiano Romano</title>
+  <meta name="description" content="Pollice Verde di Aldo Passalacqua – Progettazione e manutenzione di giardini a Fiano Romano. Servizi eco-sostenibili di giardinaggio professionale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gl: #95c11f;
+      --gd: #003a22;
+      --gm: #1a5c38;
+      --white: #fff;
+      --bg: #f4f7f0;
+      --text: #3a3a3a;
+      --muted: #6b7a6b;
+      --fh: 'Montserrat', sans-serif;
+      --fb: 'Lato', sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb); color: var(--text); overflow-x: hidden; background: #fff; }
+    img { max-width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 6%;
+      background: rgba(0,58,34,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(0,0,0,.18);
+      transition: padding .3s;
+    }
+    nav.compact { padding: 12px 6%; }
+    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .nav-logo svg { width: 44px; height: 44px; flex-shrink: 0; }
+    .logo-name { font-family: var(--fh); font-weight: 800; font-size: 1.25rem; color: #fff; letter-spacing: .5px; line-height: 1.1; }
+    .logo-name span { color: var(--gl); }
+    .logo-sub { font-size: .65rem; color: rgba(255,255,255,.55); letter-spacing: .4px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--fh); font-weight: 600; font-size: .8rem; text-decoration: none; color: rgba(255,255,255,.85); letter-spacing: .4px; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--gl); }
+    .nav-links .cta { background: var(--gl); color: var(--gd) !important; padding: 9px 20px; border-radius: 50px; }
+    .nav-links .cta:hover { background: #fff; transform: translateY(-1px); }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--gd);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 120px 6% 80px;
+    }
+    .hero-deco {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 52%; pointer-events: none;
+    }
+    .hero-deco svg { width: 100%; height: 100%; }
+    .hero-content { position: relative; z-index: 2; max-width: 620px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(149,193,31,.12); border: 1px solid rgba(149,193,31,.28);
+      padding: 6px 15px; border-radius: 50px; margin-bottom: 28px;
+      font-family: var(--fh); font-size: .72rem; font-weight: 700;
+      color: var(--gl); letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .pill-dot { width: 6px; height: 6px; background: var(--gl); border-radius: 50%; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
+    .hero-h1 {
+      font-family: var(--fh); font-weight: 900;
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      color: #fff; line-height: 1.06; margin-bottom: 22px;
+    }
+    .hero-h1 em { font-style: normal; color: var(--gl); }
+    .hero-p { font-size: 1.1rem; color: rgba(255,255,255,.68); line-height: 1.75; margin-bottom: 38px; max-width: 500px; }
+    .btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-g {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gl); color: var(--gd);
+      font-family: var(--fh); font-weight: 700; font-size: .88rem;
+      text-decoration: none; padding: 15px 30px; border-radius: 50px;
+      transition: all .3s; letter-spacing: .3px;
+    }
+    .btn-g:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(149,193,31,.35); }
+    .btn-o {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 2px solid rgba(255,255,255,.25); color: #fff;
+      font-family: var(--fh); font-weight: 600; font-size: .88rem;
+      text-decoration: none; padding: 13px 28px; border-radius: 50px;
+      transition: all .3s;
+    }
+    .btn-o:hover { border-color: #fff; background: rgba(255,255,255,.07); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 60px;
+      padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .stat-n { font-family: var(--fh); font-weight: 900; font-size: 2.1rem; color: var(--gl); line-height: 1; }
+    .stat-l { font-size: .78rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+
+    /* ── SECTIONS ── */
+    .sec { padding: 96px 6%; }
+    .sec-alt { background: var(--bg); }
+    .sec-dark { background: var(--gd); }
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 14px;
+    }
+    .tag::before { content: ''; display: block; width: 28px; height: 2px; background: var(--gl); }
+    .tag span { font-family: var(--fh); font-size: .7rem; font-weight: 700; color: var(--gl); letter-spacing: 2px; text-transform: uppercase; }
+    .h2 { font-family: var(--fh); font-weight: 800; font-size: clamp(1.7rem, 3.2vw, 2.6rem); color: var(--gd); line-height: 1.2; margin-bottom: 18px; }
+    .h2 em { font-style: normal; color: var(--gl); }
+    .h2-white { color: #fff; }
+    .lead { font-size: 1.02rem; color: var(--muted); line-height: 1.75; max-width: 560px; margin-bottom: 0; }
+
+    /* ── SERVICES ── */
+    .svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 22px; margin-top: 56px; }
+    .svc-card {
+      background: #fff; border-radius: 20px; padding: 34px 28px;
+      border: 1.5px solid #e8ede8;
+      transition: all .3s; position: relative; overflow: hidden;
+    }
+    .svc-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--gl);
+      transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .svc-card:hover { transform: translateY(-6px); box-shadow: 0 18px 48px rgba(0,58,34,.1); border-color: rgba(149,193,31,.3); }
+    .svc-card:hover::after { transform: scaleX(1); }
+    .svc-ico {
+      width: 52px; height: 52px;
+      background: rgba(149,193,31,.1); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+    }
+    .svc-ico svg { width: 26px; height: 26px; }
+    .svc-t { font-family: var(--fh); font-weight: 700; font-size: 1rem; color: var(--gd); margin-bottom: 9px; }
+    .svc-d { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── ABOUT ── */
+    .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; max-width: 1240px; margin: 0 auto; }
+    .about-card {
+      background: var(--gd); border-radius: 22px; padding: 52px 44px;
+      position: relative; overflow: hidden;
+    }
+    .about-card::before {
+      content: ''; position: absolute; top: -40%; right: -20%;
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, rgba(149,193,31,.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .about-ghost {
+      font-family: var(--fh); font-weight: 900; font-size: 7rem;
+      color: rgba(149,193,31,.1); line-height: 1;
+      position: absolute; top: 16px; right: 24px; pointer-events: none;
+    }
+    .about-q { font-size: 1.15rem; color: rgba(255,255,255,.88); line-height: 1.75; font-weight: 300; position: relative; z-index: 1; }
+    .about-q strong { color: var(--gl); font-weight: 700; }
+    .eco-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--gl); border-radius: 16px; padding: 16px 22px; margin-top: 28px;
+    }
+    .eco-badge svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .eco-t { font-family: var(--fh); font-weight: 700; font-size: .82rem; color: var(--gd); line-height: 1.35; }
+    .feats { display: flex; flex-direction: column; gap: 16px; margin-top: 30px; }
+    .feat { display: flex; align-items: flex-start; gap: 13px; }
+    .feat-ico {
+      width: 34px; height: 34px; flex-shrink: 0;
+      background: rgba(149,193,31,.1); border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feat-ico svg { width: 17px; height: 17px; }
+    .feat strong { display: block; font-family: var(--fh); font-weight: 700; font-size: .88rem; color: var(--gd); margin-bottom: 2px; }
+    .feat span { font-size: .83rem; color: var(--muted); }
+
+    /* ── WHY ── */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 26px; margin-top: 56px; }
+    .why-card {
+      text-align: center; padding: 36px 22px; border-radius: 18px;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      transition: all .3s;
+    }
+    .why-card:hover { background: rgba(149,193,31,.07); border-color: rgba(149,193,31,.25); transform: translateY(-4px); }
+    .why-ico {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(149,193,31,.11);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .why-ico svg { width: 28px; height: 28px; }
+    .why-t { font-family: var(--fh); font-weight: 700; font-size: .95rem; color: #fff; margin-bottom: 9px; }
+    .why-d { font-size: .85rem; color: rgba(255,255,255,.55); line-height: 1.65; }
+
+    /* ── CONTACT ── */
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; margin-top: 56px; align-items: start; }
+    .cinfo { display: flex; flex-direction: column; gap: 22px; }
+    .ci { display: flex; align-items: flex-start; gap: 15px; }
+    .ci-ico {
+      width: 46px; height: 46px; flex-shrink: 0;
+      background: var(--gd); border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ci-ico svg { width: 21px; height: 21px; }
+    .ci strong { display: block; font-family: var(--fh); font-weight: 700; font-size: .78rem; color: var(--gd); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 3px; }
+    .ci a, .ci span { font-size: .97rem; color: #444; text-decoration: none; }
+    .ci a:hover { color: var(--gl); }
+    .cform {
+      background: #fff; border-radius: 22px; padding: 36px 32px;
+      box-shadow: 0 8px 40px rgba(0,58,34,.08);
+    }
+    .cform h3 { font-family: var(--fh); font-weight: 700; font-size: 1.15rem; color: var(--gd); margin-bottom: 22px; }
+    .fg { margin-bottom: 18px; }
+    .fg label { display: block; font-family: var(--fh); font-weight: 600; font-size: .75rem; color: var(--gd); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 7px; }
+    .fg input, .fg textarea, .fg select {
+      width: 100%; padding: 11px 15px;
+      border: 2px solid #e4e9e4; border-radius: 11px;
+      font-family: var(--fb); font-size: .93rem; color: #333;
+      background: #fafcfa; outline: none; transition: border-color .2s;
+      appearance: none;
+    }
+    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--gl); background: #fff; }
+    .fg textarea { resize: vertical; min-height: 110px; }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .btn-sub {
+      width: 100%; padding: 15px;
+      background: var(--gd); color: #fff; border: none;
+      border-radius: 11px; font-family: var(--fh); font-weight: 700;
+      font-size: .92rem; cursor: pointer; transition: all .3s;
+      letter-spacing: .3px; margin-top: 6px;
+    }
+    .btn-sub:hover { background: var(--gl); color: var(--gd); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(149,193,31,.32); }
+
+    /* ── FOOTER ── */
+    footer { background: #011910; color: #fff; padding: 56px 6% 28px; }
+    .ft { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 26px; }
+    .fb-name { font-family: var(--fh); font-weight: 800; font-size: 1.3rem; margin-bottom: 3px; }
+    .fb-name span { color: var(--gl); }
+    .fb-sub { font-size: .72rem; color: rgba(255,255,255,.4); margin-bottom: 14px; }
+    .fb-desc { font-size: .85rem; color: rgba(255,255,255,.45); line-height: 1.7; max-width: 280px; }
+    .fc h4 { font-family: var(--fh); font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gl); margin-bottom: 14px; }
+    .fc ul { list-style: none; }
+    .fc ul li { margin-bottom: 9px; }
+    .fc ul li a { font-size: .84rem; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .fc ul li a:hover { color: var(--gl); }
+    .fbot { display: flex; justify-content: space-between; }
+    .fbot p { font-size: .76rem; color: rgba(255,255,255,.28); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 58px; height: 58px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(37,211,102,.45);
+      transition: transform .3s, box-shadow .3s;
+      animation: wap 3s infinite;
+    }
+    @keyframes wap { 0%,100%{box-shadow:0 6px 22px rgba(37,211,102,.45)} 50%{box-shadow:0 6px 30px rgba(37,211,102,.6),0 0 0 8px rgba(37,211,102,.08)} }
+    .wa:hover { transform: scale(1.1) translateY(-3px); box-shadow: 0 12px 32px rgba(37,211,102,.55); }
+    .wa svg { width: 28px; height: 28px; }
+
+    /* ── SCROLL FADE ── */
+    .fu { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .fu.vis { opacity: 1; transform: none; }
+
+    /* ── MOBILE ── */
+    @media(max-width:900px) {
+      .about-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .ft { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media(max-width:680px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(0,58,34,.98); padding: 20px 6%; gap: 14px; }
+      .nav-links.open { display: flex; }
+      .burger { display: flex; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .frow { grid-template-columns: 1fr; }
+      .fbot { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <svg viewBox="0 0 300 300" width="44" height="44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- foglia sinistra -->
+      <path fill="#8cc63f" d="M109.18 123.32 C121.89 130.70 142.20 149.34 150.32 194.92 C180.04 105.88 66.73 91.61 66.73 91.61 C66.73 91.61 58.65 197.04 137.32 201.63 C137.32 201.63 134.93 158.05 106.45 126.75 C104.75 124.88 106.98 122.07 109.18 123.32 Z"/>
+      <!-- foglia destra -->
+      <path fill="#8cc63f" d="M163.05 203.19 C175.57 165.66 193.43 152.55 203.54 148.01 C205.52 147.11 207.28 149.59 205.80 151.17 C179.84 178.84 172.84 208.20 172.84 208.20 C172.84 208.20 220.57 217.96 233.50 129.08 C233.50 129.08 145.63 135.76 163.07 203.20 Z"/>
+      <!-- gambo bianco a V -->
+      <path fill="#ffffff" d="M159.47 267.99 C163.94 235.38 171.39 202.89 179.42 185.84 C184.56 175.43 192.50 162.51 204.42 149.84 C195.07 153.93 177.83 166.28 165.46 202.13 C161.80 211.33 158.11 220.83 155.91 226.57 L155.07 229 C154.99 229.24 154.76 229.39 154.51 229.39 L154.20 229.39 C153.90 229.39 153.65 229.17 153.63 228.86 C153.16 223.68 151.96 212.44 149.28 199.20 C148.60 195.40 146.85 187.55 146.85 187.55 C143.15 171.07 137.45 157.01 129.88 145.88 C122.13 134.52 113.82 128.24 108.20 124.99 C107.88 125.43 128.35 147.93 138.01 191.21 C138.94 197.48 139.38 200.31 143.32 225.37 C146.09 261.98 146.67 267.98 146.67 267.98 Z"/>
+      <!-- anello cerchio -->
+      <path fill="#c1dc87" fill-rule="evenodd" d="M263.73 150.00 C263.73 87.29 212.71 36.26 149.99 36.26 C87.27 36.26 36.26 87.29 36.26 150.00 C36.26 212.73 87.29 263.73 150.00 263.73 C212.73 263.73 263.75 212.71 263.75 149.99 Z M278.68 150.00 C278.68 221.05 221.08 278.67 150.00 278.67 C78.93 278.67 21.33 221.07 21.33 150.00 C21.33 78.94 78.93 21.33 150.00 21.33 C221.08 21.33 278.67 78.93 278.67 150.00 Z"/>
+    </svg>
+    <div>
+      <div class="logo-name">POLLICE <span>VERDE</span></div>
+      <div class="logo-sub">di Aldo Passalacqua</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="nl">
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#perche-noi">Perché Noi</a></li>
+    <li><a href="#contatti" class="cta">Preventivo Gratuito</a></li>
+  </ul>
+  <div class="burger" id="burger" onclick="document.getElementById('nl').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <!-- Decorative large plant SVG, right side -->
+  <div class="hero-deco" aria-hidden="true">
+    <svg viewBox="-80 -40 660 640" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <!-- left leaf -->
+      <path d="M250,540 C215,430 55,310 20,130 C-5,0 70,-28 160,30 C230,74 244,370 250,540Z" fill="#95c11f" opacity="0.52"/>
+      <path d="M244,520 C202,398 70,266 38,106" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.22"/>
+      <!-- right leaf -->
+      <path d="M250,540 C285,430 445,310 480,130 C505,0 430,-28 340,30 C270,74 256,370 250,540Z" fill="#95c11f" opacity="0.36"/>
+      <path d="M256,520 C298,398 430,266 462,106" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.15"/>
+      <!-- V stem -->
+      <line x1="250" y1="540" x2="234" y2="596" stroke="#012214" stroke-width="10" stroke-linecap="round"/>
+      <line x1="250" y1="540" x2="266" y2="596" stroke="#012214" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="pill"><span class="pill-dot"></span>Giardinaggio · Fiano Romano</div>
+    <h1 class="hero-h1">Il tuo spazio verde,<br><em>curato con passione</em></h1>
+    <p class="hero-p">Progettiamo e curiamo giardini, parchi e spazi verdi con attenzione all'ambiente. Ogni progetto è unico, pensato su misura per te.</p>
+    <div class="btns">
+      <a href="#contatti" class="btn-g">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Richiedi un Preventivo
+      </a>
+      <a href="#servizi" class="btn-o">
+        Scopri i Servizi
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">20+</div><div class="stat-l">Anni di esperienza</div></div>
+      <div><div class="stat-n">500+</div><div class="stat-l">Clienti soddisfatti</div></div>
+      <div><div class="stat-n">100%</div><div class="stat-l">Eco-sostenibile</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servizi" class="sec sec-alt">
+  <div class="tag"><span>Cosa Facciamo</span></div>
+  <h2 class="h2">I Nostri <em>Servizi</em></h2>
+  <p class="lead">Una gamma completa di servizi per il tuo verde, dalla progettazione alla manutenzione quotidiana.</p>
+  <div class="svc-grid">
+
+    <div class="svc-card fu">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3 class="svc-t">Progettazione Giardini e Parchi</h3>
+      <p class="svc-d">Creiamo spazi verdi su misura, combinando estetica e funzionalità per trasformare ogni area esterna in un luogo unico e accogliente.</p>
+    </div>
+
+    <div class="svc-card fu">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><path d="M12 22V12M12 12C9 9 6 7 4 5c-1-1-1-4 2-4 2 0 4 2 6 6M12 12c3-3 6-5 8-7 1-1 1-4-2-4-2 0-4 2-6 6"/></svg>
+      </div>
+      <h3 class="svc-t">Messa a Dimora e Manutenzione</h3>
+      <p class="svc-d">Piantiamo, curiamo e manteniamo piante e prato perché restino sempre in perfetta salute. Servizi di manutenzione ordinaria e straordinaria.</p>
+    </div>
+
+    <div class="svc-card fu">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <h3 class="svc-t">Muri, Recinzioni e Irrigazione</h3>
+      <p class="svc-d">Realizziamo muri a secco, fioriere, recinzioni e impianti di irrigazione automatica per una cura ottimale e duratura del verde.</p>
+    </div>
+
+    <div class="svc-card fu">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><path d="M17 8C8 10 5.9 16.17 3.82 22M9.08 9.31C5.3 12.21 3 16.5 3 21M22 22l-5-10-5 10M9 15h6"/></svg>
+      </div>
+      <h3 class="svc-t">Abbattimento Alberi d'Alto Fusto</h3>
+      <p class="svc-d">Interveniamo in sicurezza con autoscala e tree-climbing per l'abbattimento e la gestione di alberi di grandi dimensioni.</p>
+    </div>
+
+    <div class="svc-card fu">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3 class="svc-t">Fresatura Ceppaie e Movimento Terra</h3>
+      <p class="svc-d">Rimozione professionale di ceppaie con fresatrice specializzata e lavori di movimento terra per preparare o riqualificare aree verdi.</p>
+    </div>
+
+    <div class="svc-card fu">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      </div>
+      <h3 class="svc-t">Trattamenti e Analisi del Suolo</h3>
+      <p class="svc-d">Trattamenti fitosanitari, diserbo selettivo e analisi chimico-fisiche del terreno per garantire la salute delle piante nel lungo periodo.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="chi-siamo" class="sec">
+  <div class="about-wrap">
+
+    <div class="fu">
+      <div class="about-card">
+        <div class="about-ghost">20</div>
+        <p class="about-q">
+          Ogni giardino racconta una storia. <strong>La tua.</strong><br><br>
+          Da oltre vent'anni trasformiamo spazi anonimi in luoghi di ispirazione e benessere, con rispetto per la natura e passione per il bello.
+        </p>
+        <div class="eco-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a22" stroke-width="2.5" stroke-linecap="round"><path d="M12 22V12M12 12C9 9 6 7 4 5c-1-1-1-4 2-4 2 0 4 2 6 6M12 12c3-3 6-5 8-7 1-1 1-4-2-4-2 0-4 2-6 6"/></svg>
+          <div class="eco-t">Approccio 100%<br>Eco-Sostenibile</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fu">
+      <div class="tag"><span>Chi Siamo</span></div>
+      <h2 class="h2">Aldo Passalacqua,<br><em>il giardiniere</em> che ti serve</h2>
+      <p style="color:var(--muted);font-size:1.02rem;line-height:1.75;margin-bottom:8px;">
+        Con sede a <strong>Fiano Romano</strong>, Pollice Verde è il punto di riferimento per la cura del verde nella zona. Competenza tecnica e amore per la natura, al servizio dei tuoi spazi.
+      </p>
+      <div class="feats">
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><strong>Piante autoctone e materiali sostenibili</strong><span>Specie locali per ridurre l'impatto ambientale e favorire la biodiversità</span></div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><strong>Attrezzature a batteria</strong><span>Zero emissioni e minor rumore per te, i tuoi vicini e l'ambiente</span></div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><strong>Servizio completamente personalizzato</strong><span>Ogni progetto è unico, costruito sulle tue esigenze e il tuo budget</span></div>
+        </div>
+        <div class="feat">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><strong>Preventivo gratuito e senza impegno</strong><span>Valutiamo il tuo spazio e ti proponiamo la soluzione migliore</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="perche-noi" class="sec sec-dark">
+  <div class="tag"><span>Perché Sceglierci</span></div>
+  <h2 class="h2 h2-white">Il <em>verde</em> fatto bene</h2>
+  <div class="why-grid">
+    <div class="why-card fu">
+      <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3 class="why-t">Affidabilità</h3>
+      <p class="why-d">Puntualità, trasparenza e rispetto degli accordi. Ci prendiamo cura del tuo verde come se fosse il nostro.</p>
+    </div>
+    <div class="why-card fu">
+      <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+      <h3 class="why-t">Soddisfazione Garantita</h3>
+      <p class="why-d">Lavoriamo finché il risultato non ti soddisfa pienamente. La tua felicità è la nostra priorità assoluta.</p>
+    </div>
+    <div class="why-card fu">
+      <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <h3 class="why-t">Qualità Professionale</h3>
+      <p class="why-d">Solo attrezzature professionali e materiali di prima scelta, per risultati esteticamente belli e duraturi nel tempo.</p>
+    </div>
+    <div class="why-card fu">
+      <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2" stroke-linecap="round"><path d="M12 22V12M12 12C9 9 6 7 4 5c-1-1-1-4 2-4 2 0 4 2 6 6M12 12c3-3 6-5 8-7 1-1 1-4-2-4-2 0-4 2-6 6"/></svg></div>
+      <h3 class="why-t">Rispetto per l'Ambiente</h3>
+      <p class="why-d">Eco-sostenibilità come scelta di vita: piante autoctone, materiali riciclabili, macchinari a batteria silenziosi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contatti" class="sec sec-alt">
+  <div class="tag"><span>Contattaci</span></div>
+  <h2 class="h2">Parliamo del tuo <em>progetto</em></h2>
+  <p class="lead">Che si tratti di un piccolo giardino o di un grande parco, siamo pronti ad ascoltarti. Preventivo sempre gratuito.</p>
+
+  <div class="contact-wrap">
+    <div class="cinfo">
+      <div class="ci">
+        <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><strong>Telefono / WhatsApp</strong><a href="tel:+393482555523">348 255 5523</a></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><strong>Email</strong><a href="mailto:aldo.polliceverde@gmail.com">aldo.polliceverde@gmail.com</a></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><strong>Zona Operativa</strong><span>Fiano Romano e dintorni (Roma)</span></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#95c11f" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><strong>Orari</strong><span>Lunedì – Sabato &nbsp;·&nbsp; 9:00 – 18:00</span></div>
+      </div>
+      <a href="https://wa.me/393482555523?text=Ciao%20Aldo%2C%20vorrei%20un%20preventivo%20per%20il%20mio%20giardino"
+         class="btn-g" style="width:fit-content;margin-top:10px;" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Scrivici su WhatsApp
+      </a>
+    </div>
+
+    <div class="cform fu">
+      <h3>Richiedi un Preventivo Gratuito</h3>
+      <form onsubmit="submitForm(event)">
+        <div class="frow">
+          <div class="fg"><label>Nome *</label><input type="text" placeholder="Il tuo nome" required></div>
+          <div class="fg"><label>Telefono</label><input type="tel" placeholder="Il tuo numero"></div>
+        </div>
+        <div class="fg"><label>Email *</label><input type="email" placeholder="La tua email" required></div>
+        <div class="fg">
+          <label>Servizio di Interesse</label>
+          <select>
+            <option value="">Seleziona un servizio…</option>
+            <option>Progettazione Giardino</option>
+            <option>Manutenzione Ordinaria</option>
+            <option>Abbattimento Alberi</option>
+            <option>Impianto di Irrigazione</option>
+            <option>Fresatura Ceppaie</option>
+            <option>Trattamenti Fitosanitari</option>
+            <option>Altro</option>
+          </select>
+        </div>
+        <div class="fg"><label>Messaggio</label><textarea placeholder="Descrivi il tuo spazio e cosa stai cercando…"></textarea></div>
+        <button type="submit" class="btn-sub" id="subBtn">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fb-name">POLLICE <span>VERDE</span></div>
+      <div class="fb-sub">di Aldo Passalacqua</div>
+      <p class="fb-desc">Giardinaggio professionale ed eco-sostenibile a Fiano Romano. Trasformiamo ogni spazio verde in un luogo di bellezza e benessere.</p>
+    </div>
+    <div class="fc">
+      <h4>Servizi</h4>
+      <ul>
+        <li><a href="#servizi">Progettazione Giardini</a></li>
+        <li><a href="#servizi">Manutenzione</a></li>
+        <li><a href="#servizi">Abbattimento Alberi</a></li>
+        <li><a href="#servizi">Irrigazione</a></li>
+        <li><a href="#servizi">Analisi del Suolo</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contatti</h4>
+      <ul>
+        <li><a href="tel:+393482555523">348 255 5523</a></li>
+        <li><a href="mailto:aldo.polliceverde@gmail.com">aldo.polliceverde@gmail.com</a></li>
+        <li><a href="#contatti">Fiano Romano (RM)</a></li>
+        <li><a href="#contatti">Lun–Sab · 9:00–18:00</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 Pollice Verde di Aldo Passalacqua · Fiano Romano, Roma</p>
+    <p>Realizzato con cura</p>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/393482555523?text=Ciao%20Aldo%2C%20vorrei%20un%20preventivo%20per%20il%20mio%20giardino"
+   class="wa" target="_blank" rel="noopener" aria-label="Contattaci su WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Compact nav on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('compact', window.scrollY > 80), { passive: true });
+
+  // Scroll fade-in
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 75);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  // Form → WhatsApp
+  function submitForm(e) {
+    e.preventDefault();
+    const f = e.target;
+    const nome     = f.querySelector('input[type="text"]').value.trim();
+    const telefono = f.querySelector('input[type="tel"]').value.trim();
+    const email    = f.querySelector('input[type="email"]').value.trim();
+    const servizio = f.querySelector('select').value;
+    const msg      = f.querySelector('textarea').value.trim();
+
+    let testo = `Ciao Aldo! Ho compilato il form sul sito.\n\n`;
+    testo += `*Nome:* ${nome}\n`;
+    if (telefono) testo += `*Telefono:* ${telefono}\n`;
+    if (email)    testo += `*Email:* ${email}\n`;
+    if (servizio) testo += `*Servizio:* ${servizio}\n`;
+    if (msg)      testo += `\n*Messaggio:*\n${msg}`;
+
+    const url = `https://wa.me/393482555523?text=${encodeURIComponent(testo)}`;
+
+    const btn = document.getElementById('subBtn');
+    btn.textContent = 'Apertura WhatsApp…';
+    btn.style.cssText = 'background:var(--gl);color:var(--gd);cursor:default;';
+
+    setTimeout(() => {
+      window.open(url, '_blank');
+      btn.textContent = 'Invia Richiesta';
+      btn.style.cssText = '';
+      f.reset();
+    }, 600);
+  }
+</script>
+</body>
+</html>
