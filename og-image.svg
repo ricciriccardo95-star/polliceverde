@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- sfondo verde scuro -->
+  <rect width="1200" height="630" fill="#003a22"/>
+  <!-- striscia verde chiaro decorativa in basso -->
+  <rect y="590" width="1200" height="40" fill="#95c11f" opacity="0.18"/>
+  <!-- bagliore radiale destra -->
+  <radialGradient id="glow" cx="80%" cy="45%" r="50%">
+    <stop offset="0%" stop-color="#95c11f" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#95c11f" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- logo pianta (grande, destra) scala ~2.8x, traslato -->
+  <g transform="translate(650, 30) scale(2.0)">
+    <path fill="#8cc63f" d="M109.18 123.32 C121.89 130.70 142.20 149.34 150.32 194.92 C180.04 105.88 66.73 91.61 66.73 91.61 C66.73 91.61 58.65 197.04 137.32 201.63 C137.32 201.63 134.93 158.05 106.45 126.75 C104.75 124.88 106.98 122.07 109.18 123.32 Z" opacity="0.9"/>
+    <path fill="#8cc63f" d="M163.05 203.19 C175.57 165.66 193.43 152.55 203.54 148.01 C205.52 147.11 207.28 149.59 205.80 151.17 C179.84 178.84 172.84 208.20 172.84 208.20 C172.84 208.20 220.57 217.96 233.50 129.08 C233.50 129.08 145.63 135.76 163.07 203.20 Z" opacity="0.65"/>
+    <path fill="#ffffff" d="M159.47 267.99 C163.94 235.38 171.39 202.89 179.42 185.84 C184.56 175.43 192.50 162.51 204.42 149.84 C195.07 153.93 177.83 166.28 165.46 202.13 C161.80 211.33 158.11 220.83 155.91 226.57 L155.07 229 C154.99 229.24 154.76 229.39 154.51 229.39 L154.20 229.39 C153.90 229.39 153.65 229.17 153.63 228.86 C153.16 223.68 151.96 212.44 149.28 199.20 C148.60 195.40 146.85 187.55 146.85 187.55 C143.15 171.07 137.45 157.01 129.88 145.88 C122.13 134.52 113.82 128.24 108.20 124.99 C107.88 125.43 128.35 147.93 138.01 191.21 C138.94 197.48 139.38 200.31 143.32 225.37 C146.09 261.98 146.67 267.98 146.67 267.98 Z" opacity="0.9"/>
+    <path fill="#c1dc87" fill-rule="evenodd" d="M263.73 150.00 C263.73 87.29 212.71 36.26 149.99 36.26 C87.27 36.26 36.26 87.29 36.26 150.00 C36.26 212.73 87.29 263.73 150.00 263.73 C212.73 263.73 263.75 212.71 263.75 149.99 Z M278.68 150.00 C278.68 221.05 221.08 278.67 150.00 278.67 C78.93 278.67 21.33 221.07 21.33 150.00 C21.33 78.94 78.93 21.33 150.00 21.33 C221.08 21.33 278.67 78.93 278.67 150.00 Z" opacity="0.6"/>
+  </g>
+
+  <!-- testo sinistro -->
+  <!-- POLLICE -->
+  <text x="80" y="230" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="112" fill="#ffffff" letter-spacing="2">POLLICE</text>
+  <!-- VERDE (con stacco colore) -->
+  <text x="80" y="350" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="112" fill="#95c11f" letter-spacing="2">VERDE</text>
+  <!-- separatore -->
+  <rect x="80" y="376" width="60" height="4" fill="#95c11f" rx="2"/>
+  <!-- sottotitolo -->
+  <text x="80" y="428" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="28" fill="rgba(255,255,255,0.65)" letter-spacing="1">di Aldo Passalacqua</text>
+  <!-- tagline -->
+  <text x="80" y="490" font-family="Lato, Arial, sans-serif" font-weight="400" font-size="26" fill="rgba(255,255,255,0.5)">Giardinaggio professionale · Fiano Romano</text>
+  <!-- telefono -->
+  <text x="80" y="555" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="24" fill="#95c11f">📞 348 255 5523</text>
+</svg>
